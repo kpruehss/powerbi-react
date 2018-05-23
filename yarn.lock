@@ -5331,7 +5331,7 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.13:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-powerbi-client@^2.5.1:
+powerbi-client@^2.4.1, powerbi-client@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/powerbi-client/-/powerbi-client-2.5.1.tgz#977e658f87e2a58c2f4baca9cacc11e02eafccf4"
   dependencies:
@@ -5569,6 +5569,12 @@ react-dom@^16.3.2:
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
+
+react-powerbi@^0.1.7:
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-powerbi/-/react-powerbi-0.1.7.tgz#727ed3d0e2ae34ebed9aaf790636c2e4c6979a68"
+  dependencies:
+    powerbi-client "^2.4.1"
 
 react-scripts@1.1.4:
   version "1.1.4"
