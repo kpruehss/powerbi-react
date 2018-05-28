@@ -9,12 +9,31 @@ export default class Report extends Component {
       'https://app.powerbi.com/reportEmbed?reportId=b4cac543-65c3-4a1a-b0dd-dc47f8acefd9&groupId=be8908da-da25-452e-b220-163f52476cdd',
     reportId: 'b4cac543-65c3-4a1a-b0dd-dc47f8acefd9',
     tokenType: 'Embed token',
-    models: window['powerbi-client'].mdoels,
+    models: window['powerbi-client'].models,
     permissions: models.Permissions.All,
+    config: {
+      type: 'report',
+      tokenType:
+        tokenType == '0' ? models.TokenType.Aad : models.TokenType.Embed,
+      accessToken: this.state.accessToken,
+      embedUrl: this.state.embedUrl,
+      id: this.state.reportId,
+      permissions: this.state.permissions,
+      settings: {
+        filterPaneEnabled: true,
+        navContentPaneEnabled: true,
+      },
+    },
   };
 
   render() {
     return <h1>Embed</h1>;
+    let embedContainer = document.getElementById('#embedContainer');
+    let report = powerbi.embed(embedContainer, this.state.config);
+    report.off('loaded');
+    report.on('loaded', () => {
+      Log.logText('Loaded');
+    });
   }
 }
 // const Report = props => {
